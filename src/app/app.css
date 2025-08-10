@@ -1,0 +1,80 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #004085, #007bff);
+}
+
+.navbar .navbar-brand {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn-primary {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+/* Loading spinner styles */
+.loading-spinner {
+    text-align: center;
+    padding: 40px 20px;
+    color: #007bff;
+}
+
+.loading-spinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Chart container styles */
+.chart-container {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+}
+
+#incidentChart {
+    border-radius: 6px;
+}
+
+/* Form enhancements */
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Button enhancements */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #incidentChart {
+        height: 400px !important;
+    }
+    
+    .d-md-flex {
+        flex-direction: column;
+    }
+    
+    .d-md-flex .btn {
+        margin-bottom: 10px;
+    }
+}
