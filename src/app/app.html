@@ -22,7 +22,6 @@
       </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="btn btn-primary me-md-2">Generate Cause-Effect Diagram</button>
-        <button type="button" class="btn btn-secondary" id="exportPdfBtn" disabled>Export as PDF</button>
       </div>
     </form>
 
@@ -38,6 +37,9 @@
   <!-- CHART SECTION -->
   <div class="card p-4 mt-4" id="chartSection" style="display: none;">
     <h4 class="mb-3">Cause-Effect Analysis Diagram</h4>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start p-2">
+      <button type="button" class="btn btn-secondary" id="exportPdfBtn" disabled>Export as PDF</button>
+    </div>
     <div class="chart-container">
       <div id="incidentChart" style="width: 100%; height: 600px; background: #f8f9fa;"></div>
     </div>

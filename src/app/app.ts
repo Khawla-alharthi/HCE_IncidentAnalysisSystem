@@ -10,7 +10,6 @@ interface TreeNodeData {
   parent?: number;
 }
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,7 +17,6 @@ interface TreeNodeData {
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
-
 
 
 export class App implements AfterViewInit {
@@ -222,22 +220,23 @@ export class App implements AfterViewInit {
 
     let nodeId = 2;
     
-    // Add causes based on level
     const causes = ['Human Factor', 'Equipment Issue', 'Environmental Factor', 'Process Failure'];
     const effects = ['Injury', 'Property Damage', 'Work Disruption', 'Regulatory Issue'];
     
-    // Level 1: Basic causes and effects (2 each)
-    const numCauses = Math.min(level + 1, causes.length);
-    const numEffects = Math.min(level + 1, effects.length);
+    // Always show 2 causes and 2 effects for level 1
+    const numCauses = 2;
+    const numEffects = 2;
     
-    // Add primary causes
+    // Add primary causes and effects (this is level 1 content)
     for (let i = 0; i < numCauses; i++) {
       data.push({ key: nodeId, parent: 1, name: `Cause: ${causes[i]}` });
       
-      // Add subcauses for levels > 2
-      if (level > 2 && i < 2) {
+      // Only add sub-causes if level is 2 or higher
+      if (level >= 2 && i < 2) {
         data.push({ key: nodeId + 100, parent: nodeId, name: `Sub-cause ${i + 1}.1` });
-        if (level > 3) {
+        
+        // Only add deeper sub-causes if level is 3 or higher  
+        if (level >= 3) {
           data.push({ key: nodeId + 200, parent: nodeId, name: `Sub-cause ${i + 1}.2` });
         }
       }
@@ -248,10 +247,12 @@ export class App implements AfterViewInit {
     for (let i = 0; i < numEffects; i++) {
       data.push({ key: nodeId, parent: 1, name: `Effect: ${effects[i]}` });
       
-      // Add sub-effects for levels > 3
-      if (level > 3 && i < 2) {
+      // Only add secondary effects if level is 2 or higher
+      if (level >= 2 && i < 2) {
         data.push({ key: nodeId + 300, parent: nodeId, name: `Secondary Effect ${i + 1}.1` });
-        if (level > 4) {
+        
+        // Only add long-term effects if level is 3 or higher
+        if (level >= 3) {
           data.push({ key: nodeId + 400, parent: nodeId, name: `Long-term Effect ${i + 1}.1` });
         }
       }
